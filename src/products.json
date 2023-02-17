@@ -1,0 +1,72 @@
+{
+  "product1": {
+    "name": "Black Tshirt",
+    "productNumber": 1,
+    "description": "A black over-sized unisex tshirt made from the finest wool and cotton blend guaranteed to keep you cold during the warm days and warm on the colder days",
+    "price": 299,
+    "img": "https://images.unsplash.com/photo-1566206091558-7f218b696731?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+  },
+  "product2": {
+    "name": "Jeans",
+    "productNumber": 2,
+    "description": "A classic pare of blue jeans",
+    "price": 199,
+    "img": "https://images.unsplash.com/photo-1568306281824-7afe898030d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  "product3": {
+    "name": "Blue Tshirt",
+    "productNumber": 3,
+    "description": "A blue over-sized unisex tshirt made from the finest wool and cotton blend guaranteed to keep you cold during the warm days and warm on the colder days",
+    "price": 499,
+    "img": "https://images.unsplash.com/photo-1559697242-a465f2578a95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzR8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  "product4": {
+    "name": "Pink Tshirt",
+    "productNumber": 4,
+    "description": "A pink over-sized unisex tshirt made from the finest wool and cotton blend guaranteed to keep you cold during the warm days and warm on the colder days",
+    "price": 99,
+    "img": "https://images.unsplash.com/photo-1576193929684-06c6c6a8b582?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTl8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  "product5": {
+    "name": "Red Dress",
+    "productNumber": 5,
+    "description": "A red dress perfect for the more formal events",
+    "price": 49,
+    "img": "https://images.unsplash.com/photo-1590330297626-d7aff25a0431?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxmYXNoaW9ufGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  "product6": {
+    "name": "Beige Coat",
+    "productNumber": 6,
+    "description": "A beige winter coat perfect for cold weather, made out of a wool and polyester blend",
+    "price": 149,
+    "img": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60"
+  },
+  "product7": {
+    "name": "Black Coat",
+    "productNumber": 7,
+    "description": "A black winter coat perfect for cold weather, made out of a wool and polyester blend",
+    "price": 69,
+    "img": "https://images.unsplash.com/photo-1608748010899-18f300247112?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  "product8": {
+    "name": "Printed Tshirt",
+    "productNumber": 8,
+    "description": "A printed over-sized unisex tshirt made from the finest wool and cotton blend guaranteed to keep you cold during the warm days and warm on the colder days",
+    "price": 79,
+    "img": "https://images.unsplash.com/photo-1608748010899-18f300247112?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  "product9": {
+    "name": "Orange Jacket",
+    "productNumber": 9,
+    "description": "A orange jacket perfect for the chilly evenings on a summer night",
+    "price": 189,
+    "img": "https://images.unsplash.com/flagged/photo-1570733117311-d990c3816c47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+  },
+  "product10": {
+    "name": "Black Pants",
+    "productNumber": 10,
+    "description": "Your go-to perfect black pant. Works well at the office and for more casual occasions.",
+    "price": 259,
+    "img": "https://images.unsplash.com/flagged/photo-1570733117311-d990c3816c47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+  }
+}
