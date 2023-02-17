@@ -1,0 +1,35 @@
+.searchResultContainer {
+  width: 70%;
+}
+
+.searchResult {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.searchResult li {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchResult img {
+  width: 100%;
+}
+
+.searchResult .productContainer {
+  display: flex;
+}
+
+.searchResult .productContainer * {
+  display: block;
+}
+
+.searchResult .detailViewButton {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.searchResult .detailViewButton:hover {
+  color: #174ea6;
+}

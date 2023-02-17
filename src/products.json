@@ -1,72 +1,72 @@
 {
   "product1": {
-    "name": "Black Tshirt",
+    "name": "Knitted Beige Sweater",
     "productNumber": 1,
-    "description": "A black over-sized unisex tshirt made from the finest wool and cotton blend guaranteed to keep you cold during the warm days and warm on the colder days",
+    "description": "A beige knitted cardigan in a cropped model. With a v-neck and buttons to close it. Comes in beige.",
     "price": 299,
-    "img": "https://images.unsplash.com/photo-1566206091558-7f218b696731?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+    "img": "https://www.na-kd.com/resize/globalassets/knitted_v-neck_cardigan-1100-006906-0005_25042.jpg?ref=3BD24515EA&quality=80&sharpen=0.3&width=846"
   },
   "product2": {
-    "name": "Jeans",
+    "name": "Organic V-necked Knitted Shirt",
     "productNumber": 2,
-    "description": "A classic pare of blue jeans",
+    "description": "A green shirt with a ribbed design. It has long arms and a v-neck. Comfortable and form-fitting.",
     "price": 199,
-    "img": "https://images.unsplash.com/photo-1568306281824-7afe898030d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_v-detail_light_rib_knitted_sweater_1100-005027-0052_10208.jpg?ref=B145265B23&quality=80&sharpen=0.3&width=846"
   },
   "product3": {
-    "name": "Blue Tshirt",
+    "name": "Blue Poloshirt",
     "productNumber": 3,
-    "description": "A blue over-sized unisex tshirt made from the finest wool and cotton blend guaranteed to keep you cold during the warm days and warm on the colder days",
+    "description": "A blue form-fitted poloshirt made out of a polyester wool blend.",
     "price": 499,
-    "img": "https://images.unsplash.com/photo-1559697242-a465f2578a95?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzR8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    "img": "https://www.na-kd.com/resize/globalassets/ribbed_long_sleeved_turtle_neck_sweater-1044-000229-0003_0076.jpg?ref=D78DE6995E&quality=80&sharpen=0.3&width=846"
   },
   "product4": {
-    "name": "Pink Tshirt",
+    "name": "White Fluffy Knitted Sweater",
     "productNumber": 4,
-    "description": "A pink over-sized unisex tshirt made from the finest wool and cotton blend guaranteed to keep you cold during the warm days and warm on the colder days",
+    "description": "A white knitted sweater made out of polyester. The sweater has a poloneck and long arms.",
     "price": 99,
-    "img": "https://images.unsplash.com/photo-1576193929684-06c6c6a8b582?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OTl8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    "img": "https://www.na-kd.com/resize/globalassets/fluffy_knitted_turtleneck_sweater_1100-006686-0260_02.jpeg?ref=D2FED377B3&quality=80&sharpen=0.3&width=846"
   },
   "product5": {
-    "name": "Red Dress",
+    "name": "Black and White Knitted Cardigan",
     "productNumber": 5,
-    "description": "A red dress perfect for the more formal events",
+    "description": "A knitted cardigan with a black and white wave pattern.",
     "price": 49,
-    "img": "https://images.unsplash.com/photo-1590330297626-d7aff25a0431?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAxfHxmYXNoaW9ufGVufDB8MXwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_wavy_knitted_collar_cardigan_1018-009019-0041_01c.jpg?ref=E1D056A710&quality=80&sharpen=0.3&width=846"
   },
   "product6": {
-    "name": "Beige Coat",
+    "name": "Black and White Knitted Sweater",
     "productNumber": 6,
-    "description": "A beige winter coat perfect for cold weather, made out of a wool and polyester blend",
+    "description": "A knitted sweater made out of a polyester and wool blend in an oversized fit with black and white stripes",
     "price": 149,
-    "img": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60"
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_knitted_striped_sweater-1100-006467-11230058.jpg?ref=E0406B1DE9&quality=80&sharpen=0.3&width=846"
   },
   "product7": {
-    "name": "Black Coat",
+    "name": "Oversized Black Blazer",
     "productNumber": 7,
-    "description": "A black winter coat perfect for cold weather, made out of a wool and polyester blend",
+    "description": "An oversized black blazer made out of recycled polyseter.",
     "price": 69,
-    "img": "https://images.unsplash.com/photo-1608748010899-18f300247112?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_oversized_twill_blazer_1594-000703-0002_02.jpg?ref=13FBDA35F4&quality=80&sharpen=0.3&width=846"
   },
   "product8": {
-    "name": "Printed Tshirt",
+    "name": "Black Tank Top",
     "productNumber": 8,
-    "description": "A printed over-sized unisex tshirt made from the finest wool and cotton blend guaranteed to keep you cold during the warm days and warm on the colder days",
+    "description": "A black tank top with spaghetti straps",
     "price": 79,
-    "img": "https://images.unsplash.com/photo-1608748010899-18f300247112?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzR8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_spaghetti_strap_singlet_1100-006422-0002_27673.jpg?ref=577112B196&quality=80&sharpen=0.3&width=846"
   },
   "product9": {
-    "name": "Orange Jacket",
+    "name": "Oversized White Tshirt",
     "productNumber": 9,
-    "description": "A orange jacket perfect for the chilly evenings on a summer night",
+    "description": "A white tshirt made out of 100% ecocertified cotton in an oversized fit.",
     "price": 189,
-    "img": "https://images.unsplash.com/flagged/photo-1570733117311-d990c3816c47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_oversized_3_4_sleeve_tee_1660-000577-0001_01a_2_r.jpg?ref=221808554E&quality=80&sharpen=0.3&width=846"
   },
   "product10": {
-    "name": "Black Pants",
+    "name": "Ribbed Black Tank Top",
     "productNumber": 10,
-    "description": "Your go-to perfect black pant. Works well at the office and for more casual occasions.",
+    "description": "A cropped black tank top with tie detail at the waist",
     "price": 259,
-    "img": "https://images.unsplash.com/flagged/photo-1570733117311-d990c3816c47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    "img": "https://www.na-kd.com/resize/globalassets/nakd_wrap_detail_rib_singlet_1100-005105-0002_05g.jpg?ref=A3DD25BDEF&quality=80&sharpen=0.3&width=846"
   }
 }

@@ -1,4 +1,5 @@
 import Products from "../../products";
+import './SearchResult.css'
 
 function SearchResult(props) {
 
@@ -17,12 +18,34 @@ function SearchResult(props) {
         }
     }
 
+    let getSearchResult = (e, i) => {
+
+        return (
+            <li key={i}>
+                    <img src={searchResult[i].img} />
+                <div className='productContainer'>
+                    <div className="productContainerLeft">
+                        <span className="productName">{searchResult[i].name}</span>
+                        <span className="detailViewButton">More information</span>
+                    </div>
+                    <div className="productContainerRight">
+                        <span>{searchResult[i].price} SEK</span>
+                        <button>Add to cart</button>
+                    </div>
+                </div>
+
+            </li>)
+        ;
+    }
+
 
 
   return (
-    <div>
+    <div className="searchResultContainer">
         <h2>Search Result</h2>
-        <ul></ul>
+        <ul className="searchResult">
+            { props.search && searchResult.map(getSearchResult)}
+        </ul>
     </div>
   );
 }

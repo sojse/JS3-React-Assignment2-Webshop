@@ -17,8 +17,8 @@ function SearchBar(props) {
   }
 
   return (
-    <div>
-        <form>
+    <div className='searchBarContainer'>
+        <form className='searchForm'>
             <i className="bi bi-search"></i>
             <input 
               type="search" 
