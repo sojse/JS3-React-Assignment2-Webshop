@@ -18,7 +18,7 @@ function SearchResult(props) {
         }
     }
 
-    let getSearchResult = (e, i) => {
+    let displaySearchResult = (e, i) => {
 
         return (
             <li key={i}>
@@ -30,12 +30,16 @@ function SearchResult(props) {
                     </div>
                     <div className="productContainerRight">
                         <span>{searchResult[i].price} SEK</span>
-                        <button>Add to cart</button>
+                        <button id={i} onClick={addToCart}>Add to cart</button>
                     </div>
                 </div>
 
             </li>)
         ;
+    }
+
+    let addToCart = (e) => {
+        props.addToCart(e.target.id);
     }
 
 
@@ -44,7 +48,7 @@ function SearchResult(props) {
     <div className="searchResultContainer">
         <h2>Search Result</h2>
         <ul className="searchResult">
-            { props.search && searchResult.map(getSearchResult)}
+            { props.search && searchResult.map(displaySearchResult)}
         </ul>
     </div>
   );
