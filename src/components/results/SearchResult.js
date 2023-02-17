@@ -22,7 +22,7 @@ function SearchResult(props) {
 
         return (
             <li key={i}>
-                    <img src={searchResult[i].img} />
+                    <img src={searchResult[i].img} alt={searchResult[i].name}/>
                 <div className='productContainer'>
                     <div className="productContainerLeft">
                         <span className="productName">{searchResult[i].name}</span>
