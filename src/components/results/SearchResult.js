@@ -34,16 +34,16 @@ function SearchResult(props) {
                     </div>
                     <div className="productContainerRight">
                         <span>{searchResult[i].price} SEK</span>
-                        <button id={i} onClick={addToCart}>Add to cart</button>
+                        <button className="btn" id={i} onClick={addToCart}>Add to cart</button>
                     </div>
                 </div>
 
-            </li>)
-        ;
+            </li>
+        );
     }
 
     let addToCart = (e) => {
-        props.addToCart(e.target.id);
+        props.addToCart(e.target.id, searchResult);
     }
 
     let moreInformation = (e) => {

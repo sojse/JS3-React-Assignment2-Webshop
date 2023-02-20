@@ -16,7 +16,7 @@ function MoreInformation(props) {
             <h3 className="itemName">{item.name}</h3>
             <p className="itemDescription">{item.description}</p>
             <span className="itemPrice">{item.price} SEK</span>
-            <button onClick={backToSearchResult}>Back to Search Result</button>
+            <button className='btn' onClick={backToSearchResult}>Back to Search Result</button>
         </div>
     </div>
   );

@@ -30,7 +30,7 @@ ul {
   padding-left: 0;
 }
 
-button {
+.btn {
   border-radius: 5px;
   padding: 8px 10px;
   border-style: none;
@@ -42,7 +42,7 @@ button {
   text-align: center;
 }
 
-button:hover {
+.btn:hover {
   background: #f6f9fe;
   color: #174ea6;
 }

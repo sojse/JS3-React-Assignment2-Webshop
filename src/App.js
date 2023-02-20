@@ -6,13 +6,16 @@ import ShoppingCart from './components/shoppingcart/ShoppingCart';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [clickedItem, setItem] = useState([]);
 
   let doSearch = (search) => {
     setSearchTerm(search);
   }
 
-  let addToCart = (e) => {
-    console.log(e);
+  let addToCart = (index, item) => {
+    let temp = [...clickedItem];
+    temp.push(item[index]);
+    setItem(temp);
   }
 
   return (
@@ -21,7 +24,7 @@ function App() {
     <SearchBar onSearch={doSearch} />
     <div className='mainWrapper'>
       <SearchResult search={searchTerm} addToCart={addToCart} />    
-      <ShoppingCart  />
+      <ShoppingCart item={clickedItem} />
     </div>
 
   </>
