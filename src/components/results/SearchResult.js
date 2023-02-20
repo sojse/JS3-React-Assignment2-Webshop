@@ -1,10 +1,14 @@
+import { useState } from "react";
 import Products from "../../products";
+import MoreInformation from "../moreInformation/MoreInformation";
 import './SearchResult.css'
 
 function SearchResult(props) {
 
     const productArray = Object.values(Products);
     let searchResult = [];
+    const [itemId, setItemId] = useState(0);
+    const [state, setState] = useState(false);
 
     if(props.search !== '') {
         for( let i = 0; i < productArray.length; i++ ) {
@@ -26,7 +30,7 @@ function SearchResult(props) {
                 <div className='productContainer'>
                     <div className="productContainerLeft">
                         <span className="productName">{searchResult[i].name}</span>
-                        <span className="detailViewButton">More information</span>
+                        <span className="detailViewButton" id={i} onClick={moreInformation}>More information</span>
                     </div>
                     <div className="productContainerRight">
                         <span>{searchResult[i].price} SEK</span>
@@ -42,14 +46,23 @@ function SearchResult(props) {
         props.addToCart(e.target.id);
     }
 
+    let moreInformation = (e) => {
+        setItemId(e.target.id);
+        setState(true);
+    }
+
+    let backToSearch = () => {
+        setState(false);
+    }
+
 
 
   return (
     <div className="searchResultContainer">
         <h2>Search Result</h2>
-        <ul className="searchResult">
+        {!state ? <ul className="searchResult">
             { props.search && searchResult.map(displaySearchResult)}
-        </ul>
+        </ul> : <MoreInformation clickedItem={itemId} searchResult={searchResult} backToSearchResult={backToSearch} />}
     </div>
   );
 }
