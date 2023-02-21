@@ -2,8 +2,10 @@ import './MoreInformation.css'
 
 function MoreInformation(props) {
 
+    // the item that is sent from the SearchResult component to keep track on which product the user clicked
     let item = props.searchResult[props.clickedItem]
 
+    // going back to the serach result
     let backToSearchResult = (e) => {
         e.preventDefault();
         props.backToSearchResult();

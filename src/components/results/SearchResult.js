@@ -5,7 +5,10 @@ import './SearchResult.css'
 
 function SearchResult(props) {
 
-    const productArray = Object.values(Products);
+    /**
+     * gets all the objects in the json file and puts them in an array
+     */
+    const productArray = Object.values(Products);   
     let searchResult = [];
     const [itemId, setItemId] = useState(0);
     const [state, setState] = useState(false);

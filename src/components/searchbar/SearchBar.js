@@ -3,12 +3,15 @@ import './SearchBar.css';
 
 function SearchBar(props) {
 
+  // getting the searchstring by using a state variable
   const [search, setSearch] = useState('');
 
+  // getting the data from the controlled input-field
   let onChange = (e) => {
     setSearch(e.target.value);
   }
 
+  // executes search when the user presses the enter key
   let handleKeyDown = (e) => {
     if(e.key === 'Enter') {
       e.preventDefault();
