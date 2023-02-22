@@ -6,7 +6,7 @@ function ShoppingCart(props) {
     let totalProductPrice = 1000;
     let totalPrice = 100000;
     
-    console.log(props.item);
+    //console.log(props.item);
 
     let displayShoppingCart = (e, i) => {
 

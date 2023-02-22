@@ -1,52 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Products from "../../products";
 import MoreInformation from "../moreInformation/MoreInformation";
+import ProductCard from "../productCard/ProductCard";
 import './SearchResult.css'
 
 function SearchResult(props) {
 
-    /**
-     * gets all the objects in the json file and puts them in an array
-     */
-    const productArray = Object.values(Products);   
-    let searchResult = [];
+    const productArray = Object.values(Products);   //gets all the objects in the json file and puts them in an array 
+    const [search, setSearch] = useState([]);
     const [itemId, setItemId] = useState(0);
-    const [state, setState] = useState(false);
+    const [showMoreInformation, setState] = useState(false);
 
-    if(props.search !== '') {
-        for( let i = 0; i < productArray.length; i++ ) {
-            let productName = productArray[i].name;
-            let productDescription = productArray[i].description;
-            let search = props.search;
 
-            if(productName.includes(search) || productDescription.includes(search)) {
-                searchResult.push(productArray[i]);
+    useEffect(() => {
+        // compares the search word with the productArray and picks out the matches
+        if(props.search !== '') {
+            let temp = [];
+            for( let i = 0; i < productArray.length; i++ ) {
+                let productName = productArray[i].name;
+                let productDescription = productArray[i].description;
+                let search = props.search;
+
+                if(productName.includes(search) || productDescription.includes(search)) {
+                    //searchResult.push(productArray[i]);
+                    temp.push(productArray[i]);
+                }
             }
+            setSearch(temp);
         }
-    }
+        return() => {
+        }
 
-    let displaySearchResult = (e, i) => {
+    }, [props.search])
 
-        return (
-            <li key={i}>
-                    <img src={searchResult[i].img} alt={searchResult[i].name}/>
-                <div className='productContainer'>
-                    <div className="productContainerLeft">
-                        <span className="productName">{searchResult[i].name}</span>
-                        <span className="detailViewButton" id={i} onClick={moreInformation}>More information</span>
-                    </div>
-                    <div className="productContainerRight">
-                        <span>{searchResult[i].price} SEK</span>
-                        <button className="btn" id={i} onClick={addToCart}>Add to cart</button>
-                    </div>
-                </div>
-
-            </li>
-        );
-    }
 
     let addToCart = (e) => {
-        props.addToCart(e.target.id, searchResult);
+        props.addToCart(e.target.id, search);
     }
 
     let moreInformation = (e) => {
@@ -59,13 +48,11 @@ function SearchResult(props) {
     }
 
 
-
   return (
     <div className="searchResultContainer">
         <h2>Search Result</h2>
-        {!state ? <ul className="searchResult">
-            { props.search && searchResult.map(displaySearchResult)}
-        </ul> : <MoreInformation clickedItem={itemId} searchResult={searchResult} backToSearchResult={backToSearch} />}
+        {!showMoreInformation ? <ProductCard searchResult={search} onMoreInformationClick={moreInformation} onAddToCartClick={addToCart} />
+            : <MoreInformation clickedItem={search[itemId]} backToSearchResult={backToSearch} />}
     </div>
   );
 }
