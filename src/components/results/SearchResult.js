@@ -28,9 +28,6 @@ function SearchResult(props) {
             }
             setSearch(temp);
         }
-        return() => {
-        }
-
     }, [props.search])
 
 

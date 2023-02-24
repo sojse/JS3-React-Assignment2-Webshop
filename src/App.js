@@ -29,10 +29,10 @@ function App() {
   <>
     <h1>The Magic Store</h1>
     <SearchBar onSearch={doSearch} />
-    <div className='mainWrapper'>
+    <main className='mainWrapper'>
       <SearchResult search={searchTerm} addToCart={addToCart} />    
       <ShoppingCart item={purchasedItems} />
-    </div>
+    </main>
 
   </>
   );
