@@ -26,7 +26,6 @@ function App() {
   }
 
   let removeItem = (updatedShoppingCart) => {
-    console.log(updatedShoppingCart);
     setItem(updatedShoppingCart);
   }
 

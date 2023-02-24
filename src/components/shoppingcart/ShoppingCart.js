@@ -21,6 +21,7 @@ function ShoppingCart(props) {
     useEffect(() => { 
         //setShoppingCart(tempArray);
         let purchased = props.item;
+        console.log(purchased);
 
             console.log(purchased)
             // checks if there are any items to add to the shoppingcart
@@ -42,10 +43,10 @@ function ShoppingCart(props) {
         /**
          * försvinner tillfälligt men kommer tillbaks igen när jag trycker på någon annan knapp
          */
-        tempArray = [...shoppingCart];
+        tempArray = [...props.item];
 
         tempArray.filter((e, i, arr) => {
-            if(e.product.productNumber === id) {
+            if(e.productNumber === id) {
                 arr.splice(i, 1);
                 return true;
             }
