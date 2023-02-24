@@ -5,6 +5,7 @@ import './ShoppingCart.css'
 function ShoppingCart(props) {
 
     let totalPrice = 0;
+    const [total, setTotal] = useState(0);
     // let shoppingCart = [{product: {}, quantity: 0}];
     const [shoppingCart, setShoppingCart] = useState([]);
     let tempArray = [];
@@ -19,17 +20,15 @@ function ShoppingCart(props) {
 
 
     useEffect(() => { 
-        //setShoppingCart(tempArray);
         let purchased = props.item;
-        console.log(purchased);
 
-            console.log(purchased)
             // checks if there are any items to add to the shoppingcart
             if(purchased.length > 0) {
 
                 for(let i = 0; i < purchased.length; i++) {
                     // checks if its the first item or if it is the same item as the one that was added last
-                    tempArray.push({product: purchased[i], quantity: 1});  
+                    tempArray.push({product: purchased[i], quantity: 1});
+                    setTotal(total + purchased[i].price);
                 }
             }
             setShoppingCart(tempArray);
@@ -52,7 +51,7 @@ function ShoppingCart(props) {
             }
             return false;
         })
-        //setShoppingCart(tempArray);
+
         props.onRemove(tempArray);
 
     }
@@ -67,7 +66,7 @@ function ShoppingCart(props) {
         </ul>
         <div>
             <span>Total:</span>
-            <span>{totalPrice} SEK</span>   
+            <span>{total} SEK</span>   
         </div>
       </div>
     );
