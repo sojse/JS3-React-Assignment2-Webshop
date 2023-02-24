@@ -25,17 +25,23 @@ function App() {
     setItem(newItem);
   }
 
+  let removeItem = (updatedShoppingCart) => {
+    console.log(updatedShoppingCart);
+    setItem(updatedShoppingCart);
+  }
+
   return (
   <>
     <h1>The Magic Store</h1>
     <SearchBar onSearch={doSearch} />
     <main className='mainWrapper'>
       <SearchResult search={searchTerm} addToCart={addToCart} />    
-      <ShoppingCart item={purchasedItems} />
+      <ShoppingCart item={purchasedItems} onRemove={removeItem} />
     </main>
-
   </>
+
   );
 }
 
 export default App;
+

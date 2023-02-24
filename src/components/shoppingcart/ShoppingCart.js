@@ -25,26 +25,10 @@ function ShoppingCart(props) {
             console.log(purchased)
             // checks if there are any items to add to the shoppingcart
             if(purchased.length > 0) {
-                let lastAddedProductNumber = (purchased[purchased.length - 1].productNumber);   
 
                 for(let i = 0; i < purchased.length; i++) {
                     // checks if its the first item or if it is the same item as the one that was added last
-                    if(purchased.length < 1) {
-                        tempArray.push({product: purchased[i], quantity: 1});  
-                        
-                    //checks if the product is not the first to be added and is not the same as the latest to not duplicate the same item
-                    } else if(purchased[i].productNumber === lastAddedProductNumber && purchased.length > 1) {
-                        /** problemet är att ta ut den delen av arrayen som ska uppdateras med quantity */
-                        //tempArray[i].quantity += 1;
-                        /*console.log(purchased[i]);
-                        let duplicate = tempArray[i];
-                        duplicate.quantity += 1;
-                        tempArray.splice(i, 1);
-                        tempArray.push(duplicate);*/
-                    } else {
-                        tempArray.push({product: purchased[i], quantity: 1})
-                    }
-
+                    tempArray.push({product: purchased[i], quantity: 1});  
                 }
             }
             setShoppingCart(tempArray);
@@ -58,9 +42,7 @@ function ShoppingCart(props) {
         /**
          * försvinner tillfälligt men kommer tillbaks igen när jag trycker på någon annan knapp
          */
-        console.log(id);
         tempArray = [...shoppingCart];
-        console.log(tempArray);
 
         tempArray.filter((e, i, arr) => {
             if(e.product.productNumber === id) {
@@ -69,8 +51,8 @@ function ShoppingCart(props) {
             }
             return false;
         })
-        console.log(tempArray);
-        setShoppingCart(tempArray);
+        //setShoppingCart(tempArray);
+        props.onRemove(tempArray);
 
     }
   
