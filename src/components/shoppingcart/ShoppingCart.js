@@ -4,9 +4,8 @@ import './ShoppingCart.css'
 
 function ShoppingCart(props) {
 
-    let totalPrice = 0;
-    const [total, setTotal] = useState(0);
-    // let shoppingCart = [{product: {}, quantity: 0}];
+    const [totalPrice, setTotal] = useState(0);
+    //    shoppingCart = [{product: {}, quantity: 0}];
     const [shoppingCart, setShoppingCart] = useState([]);
     let tempArray = [];
     /**
@@ -18,9 +17,14 @@ function ShoppingCart(props) {
      *    break;
      */
 
+    /**
+     * Det som går fel med priset är att när man tar bort ett objekt läggs det priset till på nytt
+     * propsen ändras och då räknas priset ut igen, totalPrice 
+     */
 
     useEffect(() => { 
         let purchased = props.item;
+        let tempPrice = 0;  // needed to prevent the total price to add the same item again after removing something from the cart
 
             // checks if there are any items to add to the shoppingcart
             if(purchased.length > 0) {
@@ -28,7 +32,9 @@ function ShoppingCart(props) {
                 for(let i = 0; i < purchased.length; i++) {
                     // checks if its the first item or if it is the same item as the one that was added last
                     tempArray.push({product: purchased[i], quantity: 1});
-                    setTotal(total + purchased[i].price);
+                    tempPrice += purchased[i].price;
+                    setTotal(tempPrice);
+                    //setTotal(totalPrice + purchased[i].price);
                 }
             }
             setShoppingCart(tempArray);
@@ -36,20 +42,16 @@ function ShoppingCart(props) {
     }, [props.item]);
 
     /**
-     * tar bort delen från arrayen men den läggs till igen
+     * Filters through the array and removes the item with the matched id for the product that will be removed
      */
     let removeItem = (id) => {
-        /**
-         * försvinner tillfälligt men kommer tillbaks igen när jag trycker på någon annan knapp
-         */
-        tempArray = [...props.item];
 
-        tempArray.filter((e, i, arr) => {
+        tempArray = props.item.filter((e, i, arr) => {
             if(e.productNumber === id) {
-                arr.splice(i, 1);
-                return true;
+                setTotal(totalPrice - props.item[i].price);
+                return false;
             }
-            return false;
+            return true;
         })
 
         props.onRemove(tempArray);
@@ -66,7 +68,7 @@ function ShoppingCart(props) {
         </ul>
         <div>
             <span>Total:</span>
-            <span>{total} SEK</span>   
+            <span>{totalPrice} SEK</span>   
         </div>
       </div>
     );
