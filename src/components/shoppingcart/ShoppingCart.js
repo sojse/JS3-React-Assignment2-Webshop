@@ -7,7 +7,6 @@ function ShoppingCart(props) {
     const [totalPrice, setTotal] = useState(0);
     //    shoppingCart = [{product: {}, quantity: 0}];
     const [shoppingCart, setShoppingCart] = useState([]);
-    let tempArray = [];
     /**
      * Om något id är lika med samma produkt så kommer quantity ökas istället för att
      * produkten läggs till som ett nytt objekt 
@@ -17,13 +16,9 @@ function ShoppingCart(props) {
      *    break;
      */
 
-    /**
-     * Det som går fel med priset är att när man tar bort ett objekt läggs det priset till på nytt
-     * propsen ändras och då räknas priset ut igen, totalPrice 
-     */
-
     useEffect(() => { 
         let purchased = props.item;
+        let tempArray = [];
         let tempPrice = 0;  // needed to prevent the total price to add the same item again after removing something from the cart
 
             // checks if there are any items to add to the shoppingcart
@@ -45,7 +40,7 @@ function ShoppingCart(props) {
      * Filters through the array and removes the item with the matched id for the product that will be removed
      */
     let removeItem = (id) => {
-
+        let tempArray = [];
         tempArray = props.item.filter((e, i, arr) => {
             if(e.productNumber === id) {
                 setTotal(totalPrice - props.item[i].price);
