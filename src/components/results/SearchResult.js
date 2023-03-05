@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Products from "../../products";
 import MoreInformation from "../moreInformation/MoreInformation";
 import ProductCard from "../productCard/ProductCard";
+import ShoppingCartContext from "../../context/ShoppingCartContext";
 import './SearchResult.css'
 
 function SearchResult(props) {
@@ -10,6 +11,7 @@ function SearchResult(props) {
     const [search, setSearch] = useState([]);
     const [itemId, setItemId] = useState(0);
     const [showMoreInformation, setState] = useState(false);
+    const shoppingCart = useContext(ShoppingCartContext);
 
 
     useEffect(() => {
@@ -32,7 +34,9 @@ function SearchResult(props) {
 
 
     let addToCart = (e) => {
-        props.addToCart(e.target.id, search);
+        let updatedShoppingCart = [...shoppingCart.product]
+        updatedShoppingCart.push(search[e.target.id])
+        shoppingCart.setProducts(updatedShoppingCart);
     }
 
     let moreInformation = (e) => {

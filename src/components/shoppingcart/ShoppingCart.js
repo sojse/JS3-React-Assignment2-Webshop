@@ -1,16 +1,14 @@
-import { useEffect, useState } from 'react';
-import ShoppingCartItem from '../shoppingCartItem/ShoppingCartItem';
-import './ShoppingCart.css'
+import { useContext, useState } from "react";
+import ShoppingCartContext from "../../context/ShoppingCartContext";
+import ShoppingCartItem from "../shoppingCartItem/ShoppingCartItem";
+import './ShoppingCart.css';
 
 function ShoppingCart(props) {
-
-    const [totalPrice, setTotal] = useState(0);
-    //    shoppingCart = [{product: {}, quantity: 0}];
-    const [shoppingCart, setShoppingCart] = useState([]);
     
+    const shoppingCart = useContext(ShoppingCartContext);
+    const [totalPrice, setTotal] = useState(0);
 
-
-    useEffect(() => { 
+    /*useEffect(() => { 
         let purchased = props.item;
         let tempArray = [];
         let tempPrice = 0;  // needed to prevent the total price to add the same item again after removing something from the cart
@@ -33,22 +31,22 @@ function ShoppingCart(props) {
             setTotal(tempPrice);
             setShoppingCart(tempArray);        
     
-    }, [props.item]);
+    }, [props.item]);*/
 
     /**
      * Filters through the array and removes the item with the matched id for the product that will be removed
      */
     let removeItem = (id) => {
-        let tempArray = [];
-        tempArray = props.item.filter((e, i, arr) => {
+        let updatedShoppingCart = [];
+        updatedShoppingCart = shoppingCart.product.filter((e, i, arr) => {
             if(e.productNumber === id) {
-                setTotal(totalPrice - props.item[i].price);
+                setTotal(totalPrice - shoppingCart.product.price);
                 return false;
             }
             return true;
         })
 
-        props.onRemove(tempArray);
+        shoppingCart.setProducts(updatedShoppingCart);
 
     }
   
@@ -56,7 +54,7 @@ function ShoppingCart(props) {
       <div className='shoppingCartContainer'>
         <h2>Shopping Cart</h2>
         <ul>
-            {shoppingCart.map( (e, i) => {
+            {shoppingCart.product.map( (e, i) => {
                 return <ShoppingCartItem key={i} item={e} index={i} removeItem={removeItem} />
             })}
         </ul>
@@ -66,6 +64,6 @@ function ShoppingCart(props) {
         </div>
       </div>
     );
-  }
-  
-  export default ShoppingCart;
+}
+
+export default ShoppingCart;
