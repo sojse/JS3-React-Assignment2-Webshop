@@ -1,8 +1,5 @@
 function ShoppingCartItem(props) {
 
-    console.log(props)
-
-    
     let removeItem = () => {
         props.removeItem(props.item.productNumber);
     }
