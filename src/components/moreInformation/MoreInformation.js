@@ -1,16 +1,13 @@
 import './MoreInformation.css'
+import { Link, useParams } from 'react-router-dom';
 
 function MoreInformation(props) {
 
-    // the item that is sent from the SearchResult component to keep track on which product the user clicked
-    let item = props.clickedItem;
+  // getting the id that resembles the index of the clicked product
+  const params = useParams();
 
-    // going back to the serach result
-    let backToSearchResult = (e) => {
-        e.preventDefault();
-        props.backToSearchResult();
-    }
-   
+  let item = props.searchResult[params.id];
+
   return (
     <div className="itemContainer">
         <img src={item.img} alt={item.name} />
@@ -18,7 +15,7 @@ function MoreInformation(props) {
             <h3 className="itemName">{item.name}</h3>
             <p className="itemDescription">{item.description}</p>
             <span className="itemPrice">{item.price} SEK</span>
-            <button className='btn' onClick={backToSearchResult}>Back to Search Result</button>
+            <Link className='btn' to='/' >Back to Search Result</Link>
         </div>
     </div>
   );
