@@ -18,8 +18,20 @@ function ShoppingCart(props) {
     const [totalPrice, setTotal] = useState(0);
 
     useEffect(() => {
+
+        let newPrice = 0;
+
+        if(shoppingCart.product.length > 0) {
+            for(let i = 0; i < shoppingCart.product.length; i++) {
+
+                newPrice += shoppingCart.product[i].product.price * shoppingCart.product[i].quantity
+            }
+        }
+
+
+        setTotal(newPrice);
         
-        let updatedShoppingCart = [...shoppingCart.product];
+        /*let updatedShoppingCart = [...shoppingCart.product];
         let newPrice = 0;
         let latestProduct = updatedShoppingCart[updatedShoppingCart.length - 1]
 
@@ -34,7 +46,7 @@ function ShoppingCart(props) {
                 return true;
             });
         }
-        setTotal(newPrice);
+        setTotal(newPrice);*/
 
     }, [shoppingCart]);
 

@@ -37,9 +37,8 @@ function SearchResult(props) {
      * When the user adds an item to the cart the product will be added to the shopping cart context
      */
     let addToCart = (e) => {
-        let updatedShoppingCart = [...shoppingCart.product]
-        updatedShoppingCart.push({product: matchedProducts[e.target.id], quantity: 1})
-        shoppingCart.setProducts(updatedShoppingCart);
+
+        shoppingCart.addToCart(matchedProducts[e.target.id]);
     }
 
 
