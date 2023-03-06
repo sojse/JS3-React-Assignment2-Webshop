@@ -1,5 +1,9 @@
 import './ProductCard.css';
 
+/**
+ * This component renders all the product cards in the search result
+ */
+
 function ProductCard(props) {
 
     let displaySearchResult = (e, i) => {
