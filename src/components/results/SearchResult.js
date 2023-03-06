@@ -35,7 +35,7 @@ function SearchResult(props) {
 
     let addToCart = (e) => {
         let updatedShoppingCart = [...shoppingCart.product]
-        updatedShoppingCart.push(search[e.target.id])
+        updatedShoppingCart.push({product: search[e.target.id], quantity: 1})
         shoppingCart.setProducts(updatedShoppingCart);
     }
 

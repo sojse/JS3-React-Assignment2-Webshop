@@ -1,46 +1,52 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ShoppingCartContext from "../../context/ShoppingCartContext";
 import ShoppingCartItem from "../shoppingCartItem/ShoppingCartItem";
 import './ShoppingCart.css';
 
 function ShoppingCart(props) {
+
+    /**
+     * Problem
+     * 
+     * Fastnar i oändliga loopar när jag försöker komma åt min context provider för att uppdatera min shopping cart
+     * 
+     * I Search resulten har jag en warning för mina dependencies, om jag lägger till den i dependency så blir det grönt i
+     * terminalen men jag fastnar i en oändlig loop
+     */
     
     const shoppingCart = useContext(ShoppingCartContext);
     const [totalPrice, setTotal] = useState(0);
 
-    /*useEffect(() => { 
-        let purchased = props.item;
-        let tempArray = [];
-        let tempPrice = 0;  // needed to prevent the total price to add the same item again after removing something from the cart
-    
-            // checks if there are any items to add to the shoppingcart
-            if(purchased.length > 0) {
-                for(let i = 0; i < purchased.length; i++) {
-                    tempArray.push({product: purchased[i], quantity: 1});
-                    tempPrice += purchased[i].price;
-    
-                    //just nu försvinner det dubbla helt så det inte syns alls
-                    for(let j = 0; j < purchased.length; j++) {
-                        if(i !== j && purchased[i].productNumber === purchased[j].productNumber) {
-                            console.log('duplicate')
-                            tempArray[i].quantity++;
-                        }
-                    }
+    useEffect(() => {
+        
+        let updatedShoppingCart = [...shoppingCart.product];
+        let newPrice = 0;
+        let latestProduct = updatedShoppingCart[updatedShoppingCart.length - 1]
+
+        if(updatedShoppingCart.length > 0) {
+            updatedShoppingCart = updatedShoppingCart.filter((e, i, arr) => {
+                newPrice += e.product.price;
+
+                if(i !== updatedShoppingCart.length - 1 && e.product.productNumber === latestProduct.product.productNumber ) {
+                    //shoppingCart.setProducts(updatedShoppingCart);
+                    return false;
                 }
-            }
-            setTotal(tempPrice);
-            setShoppingCart(tempArray);        
-    
-    }, [props.item]);*/
+                return true;
+            });
+        }
+        setTotal(newPrice);
+
+    }, [shoppingCart]);
 
     /**
      * Filters through the array and removes the item with the matched id for the product that will be removed
      */
     let removeItem = (id) => {
         let updatedShoppingCart = [];
+
         updatedShoppingCart = shoppingCart.product.filter((e, i, arr) => {
-            if(e.productNumber === id) {
-                setTotal(totalPrice - shoppingCart.product.price);
+            if(e.product.productNumber === id) {
+                setTotal(totalPrice - e.product.price);
                 return false;
             }
             return true;

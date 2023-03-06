@@ -1,22 +1,22 @@
 function ShoppingCartItem(props) {
 
     let removeItem = () => {
-        props.removeItem(props.item.productNumber);
+        props.removeItem(props.item.product.productNumber);
     }
 
     return (
-        <div className='purchasedProduct' >
-            <img src={props.item.img} alt={props.item.name} />
+        <li className='purchasedProduct' >
+            <img src={props.item.product.img} alt={props.item.product.name} />
             <div>
-                <h3>{props.item.name}</h3>
+                <h3>{props.item.product.name}</h3>
                 <div className='priceInformation'>
-                    <span>Qty: {0}</span>
-                    <span>Price: {props.item.price}</span>
-                    <span>Total: {props.item.quantity * props.item.price}</span>
+                    <span>Qty: {props.item.quantity}</span>
+                    <span>Price: {props.item.product.price}</span>
+                    <span>Total: {props.item.quantity * props.item.product.price}</span>
                 </div>
             </div>
             <span className='removeItem btn' onClick={removeItem}>X</span>
-        </div>
+        </li>
     );
 }
 
