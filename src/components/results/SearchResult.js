@@ -4,12 +4,13 @@ import MoreInformation from "../moreInformation/MoreInformation";
 import ProductCard from "../productCard/ProductCard";
 import ShoppingCartContext from "../../context/ShoppingCartContext";
 import "./SearchResult.css"
-import { Route, Routes } from "react-router-dom";
 
 function SearchResult(props) {
 
     const productArray = Object.values(Products);   //gets all the objects in the json file and puts them in an array 
     const [matchedProducts, setMatchedProducts] = useState([]);     // used to store the products that match the search
+    const [moreInformationVisible, setVisibility] = useState(false);
+    const [itemId, setItemId] = useState(0);
     const shoppingCart = useContext(ShoppingCartContext);
 
 
@@ -24,7 +25,6 @@ function SearchResult(props) {
                 let search = props.search;
 
                 if(productName.includes(search) || productDescription.includes(search)) {
-                    //searchResult.push(productArray[i]);
                     temp.push(productArray[i]);
                 }
             }
@@ -40,14 +40,21 @@ function SearchResult(props) {
         shoppingCart.addToCart(matchedProducts[e.target.id]);
     }
 
+    let onMoreInformationClick = (e) => {
+        setVisibility(true);
+        setItemId(e.target.id);
+    }
+
+    let backToSearch = () => {
+        setVisibility(false);
+    }
+
 
   return (
     <div className="searchResultContainer">
         <h2>Products</h2>
-        <Routes>
-            <Route path="" element={ <ProductCard searchResult={matchedProducts} onAddToCartClick={addToCart}  />} />
-            <Route path="/product/:id" element={<MoreInformation searchResult={matchedProducts} />} />
-        </Routes>
+        <ProductCard searchResult={matchedProducts} onAddToCartClick={addToCart} onMoreInformationClick={onMoreInformationClick} />
+        {moreInformationVisible && <MoreInformation searchResult={matchedProducts[itemId]} onBackToSearchClick={backToSearch} />}
     </div>
   );
 }

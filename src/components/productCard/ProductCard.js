@@ -1,5 +1,4 @@
 import "./ProductCard.css";
-import { Link } from "react-router-dom";
 
 /**
  * This component renders all the product cards in the search result
@@ -15,7 +14,7 @@ function ProductCard(props) {
                 <div className="productContainer">
                     <div className="productContainerLeft">
                         <span className="productName">{e.name}</span>
-                        <Link className="detailViewButton" id={i} to={"/product/" + i}>More information</Link>
+                        <span className="detailViewButton" id={i} onClick={props.onMoreInformationClick}>More information</span>
                     </div>
                     <div className="productContainerRight">
                         <span>{e.price} SEK</span>
