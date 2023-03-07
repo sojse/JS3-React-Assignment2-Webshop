@@ -46,7 +46,7 @@ function SearchResult(props) {
         <h2>Products</h2>
         <Routes>
             <Route path="" element={ <ProductCard searchResult={matchedProducts} onAddToCartClick={addToCart}  />} />
-            <Route path="/product/:id" element={<MoreInformation searchResult={matchedProducts} products={productArray} />} />
+            <Route path="/product/:id" element={<MoreInformation searchResult={matchedProducts} />} />
         </Routes>
     </div>
   );
