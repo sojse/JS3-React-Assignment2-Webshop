@@ -1,5 +1,5 @@
-import './ProductCard.css';
-import { Link } from 'react-router-dom';
+import "./ProductCard.css";
+import { Link } from "react-router-dom";
 
 /**
  * This component renders all the product cards in the search result
@@ -12,10 +12,10 @@ function ProductCard(props) {
         return (
             <li key={i}>
                     <img src={e.img} alt={e.name}/>
-                <div className='productContainer'>
+                <div className="productContainer">
                     <div className="productContainerLeft">
                         <span className="productName">{e.name}</span>
-                        <Link className="detailViewButton" id={i} to={'/product/' + i}>More information</Link>
+                        <Link className="detailViewButton" id={i} to={"/product/" + i}>More information</Link>
                     </div>
                     <div className="productContainerRight">
                         <span>{e.price} SEK</span>

@@ -1,5 +1,5 @@
-import './MoreInformation.css'
-import { Link, useParams } from 'react-router-dom';
+import "./MoreInformation.css";
+import { Link, useParams } from "react-router-dom";
 
 function MoreInformation(props) {
 
@@ -15,7 +15,7 @@ function MoreInformation(props) {
             <h3 className="itemName">{item.name}</h3>
             <p className="itemDescription">{item.description}</p>
             <span className="itemPrice">{item.price} SEK</span>
-            <Link className='btn' to='/' >Back to Search Result</Link>
+            <Link className="btn" to="/" >Back to Search Result</Link>
         </div>
     </div>
   );

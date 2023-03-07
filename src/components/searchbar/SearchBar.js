@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './SearchBar.css';
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./SearchBar.css";
 
 function SearchBar(props) {
 
@@ -19,19 +19,22 @@ function SearchBar(props) {
 
   // executes search when the user presses the enter key
   let handleKeyDown = (e) => {
+    
     if(e.key === 'Enter') {
       e.preventDefault();
-      
+
       //navigates back to the start page, if the user is in the detailview for a product this allows the user
       //to make a new search in the detail view
       navigate('/');
+      
+      // sends the search back to the parent
       props.onSearch(search);
     }
   }
 
   return (
-    <div className='searchBarContainer'>
-        <form className='searchForm'>
+    <div className="searchBarContainer">
+        <form className="searchForm">
             <i className="bi bi-search"></i>
             <input 
               type="search" 

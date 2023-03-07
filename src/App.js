@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import './App.css';
-import SearchResult from './components/results/SearchResult';
-import SearchBar from './components/searchbar/SearchBar';
-import ShoppingCart from './components/shoppingcart/ShoppingCart';
-import ShoppingCartProvider from './provider/ShoppingCartProvider';
+import { useState } from "react";
+import "./App.css";
+import SearchResult from "./components/results/SearchResult";
+import SearchBar from "./components/searchbar/SearchBar";
+import ShoppingCart from "./components/shoppingcart/ShoppingCart";
+import ShoppingCartProvider from "./provider/ShoppingCartProvider";
 
 function App() {
   // state variable used to update the searchTerm
@@ -18,7 +18,7 @@ function App() {
   <>
     <h1>The Magic Store</h1>
     <SearchBar onSearch={doSearch} />
-    <main className='mainWrapper'>
+    <main className="mainWrapper">
       <ShoppingCartProvider >
         <SearchResult search={searchTerm}  />
         <ShoppingCart />    

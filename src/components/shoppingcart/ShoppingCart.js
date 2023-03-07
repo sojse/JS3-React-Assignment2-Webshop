@@ -1,13 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import ShoppingCartContext from "../../context/ShoppingCartContext";
 import ShoppingCartItem from "../shoppingCartItem/ShoppingCartItem";
-import './ShoppingCart.css';
+import "./ShoppingCart.css";
 
 function ShoppingCart(props) {
 
     const shoppingCart = useContext(ShoppingCartContext);
     const [totalPrice, setTotal] = useState(0);
 
+    // updates the price by  looping through the whole shopping cart and adding all the product prices times their quantity
     useEffect(() => {
 
         let newPrice = 0;
@@ -22,14 +23,14 @@ function ShoppingCart(props) {
         setTotal(newPrice);
 
     }, [shoppingCart]);
-    
+
   
     return (
-      <div className='shoppingCartContainer'>
+      <div className="shoppingCartContainer">
         <h2>Shopping Cart</h2>
         <ul>
             {shoppingCart.product.map( (e, i) => {
-                return <ShoppingCartItem key={i} item={e} index={i} removeItem={id => shoppingCart.removeFromCart(id)} />
+                return <ShoppingCartItem key={i} item={e} index={i} />
             })}
         </ul>
         <div>
