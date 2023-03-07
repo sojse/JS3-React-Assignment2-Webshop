@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SearchBar.css';
 
 function SearchBar(props) {
@@ -6,6 +7,7 @@ function SearchBar(props) {
   // getting the searchstring by using a state variable
   const [search, setSearch] = useState('');
   const searchBar = useRef();
+  const navigate = useNavigate();
 
   // sets the focus to the search bar when the component renders
   useEffect(() => searchBar.current.focus());
@@ -19,6 +21,10 @@ function SearchBar(props) {
   let handleKeyDown = (e) => {
     if(e.key === 'Enter') {
       e.preventDefault();
+      
+      //navigates back to the start page, if the user is in the detailview for a product this allows the user
+      //to make a new search in the detail view
+      navigate('/');
       props.onSearch(search);
     }
   }
