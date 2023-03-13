@@ -15,7 +15,7 @@ function ShoppingCartProvider({children}) {
         updatedShoppingCart = product.filter((e, i, arr) => {
             // checks if the last added product is already in the shoppingcart, if it is the quantity will increase
             if(i !== arr.length && e.product.productNumber === latestProduct.productNumber) {
-                newQuantity = e.quantity; // if the product is already in the shopping cart the previous value will be added
+                newQuantity = e.quantity; // if the product is already in the shopping cart the previous quantity value will be added
                 newQuantity++;
                 return false;
             }
