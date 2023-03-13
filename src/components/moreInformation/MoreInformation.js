@@ -2,8 +2,6 @@ import "./MoreInformation.css";
 
 function MoreInformation(props) {
 
-  // getting the id that resembles the index of the clicked product
-
   //the item that will be used to show the correct product
   let item = props.searchResult;
 
