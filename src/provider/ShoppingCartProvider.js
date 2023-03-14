@@ -10,11 +10,10 @@ function ShoppingCartProvider({children}) {
     const addToCart = (newItem) => {
         let updatedShoppingCart = [];
         let newQuantity = 1;    //setting the default quantity for when a product is added
-        let latestProduct = newItem;
 
         updatedShoppingCart = product.filter((e, i, arr) => {
             // checks if the last added product is already in the shoppingcart, if it is the quantity will increase
-            if(i !== arr.length && e.product.productNumber === latestProduct.productNumber) {
+            if(e.product.productNumber === newItem.productNumber) {
                 newQuantity = e.quantity; // if the product is already in the shopping cart the previous quantity value will be added
                 newQuantity++;
                 return false;
